@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const AddFriendForm = props => {
     const [friend, setFriend] = useState({name: '', age: '', email: ''});
-    
-    useEffect(()=> {
-        if (props.friendToEdit) {
-            setFriend(props.friendToEdit);
-        }
-    }, [props.friendToEdit]);
 
     const handleSubmit = e => {
         e.preventDefault();
-        if (props.friendToEdit) {
-            props.finishEdit(friend);
-        } else {
-            props.addFriend(friend);
-        }
+        props.addFriend(friend);
         setFriend({name: '', age: '', email: ''});
     }
 
@@ -25,8 +15,7 @@ const AddFriendForm = props => {
 
     return (
         <div>
-            {!props.friendToEdit && <h3>Add Friend</h3>}
-            {props.friendToEdit && <h3>Edit Friend</h3>}
+            <h2>Add Friend</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='name'>Name: </label>
                 <input type='text' name='name' value={friend.name} onChange={handleChange} />
@@ -36,8 +25,7 @@ const AddFriendForm = props => {
                 
                 <label htmlFor='email'>Email: </label>
                 <input type='email' name='email' value={friend.email} onChange={handleChange} />
-                <button type='submit'>
-                    {props.friendToEdit? 'Edit Friend': 'Add Friend'}</button>
+                <button type='submit'>Submit</button>
             </form>
         </div>
     )
