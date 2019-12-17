@@ -1,12 +1,14 @@
 import React from 'react';
-import { tsPropertySignature } from '@babel/types';
 
+const Friend = ({ friend, deleteFriend, editFriend }) => {
 
-const Friend = ({ friend, deleteFriend }) => {
-
-    const handleClick = () => {
+    const handleDeleteClick = () => {
         //console.log(friend);
         deleteFriend(friend);
+    }
+
+    const handleEditClick = () => {
+        editFriend(friend);
     }
 
     return (
@@ -14,7 +16,8 @@ const Friend = ({ friend, deleteFriend }) => {
             <h3>{friend.name}</h3>
             <p>{friend.age} Years Old</p>
             <p>{friend.email}</p>
-            <button onClick={handleClick}>X</button>
+            <button onClick={handleDeleteClick}>X</button>
+            <button onClick={handleEditClick}>Edit</button>
         </div>  
     )
 }

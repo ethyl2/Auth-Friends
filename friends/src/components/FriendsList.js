@@ -7,6 +7,7 @@ import Friend from './Friend';
 const FriendsList = props => {
     const [friends, setFriends] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [friendToEdit, setFriendToEdit] = useState();
 
     useEffect(()=> {
         axiosWithAuth().get('/friends')
@@ -42,13 +43,35 @@ const FriendsList = props => {
             .catch(err => console.log(err));
     }
 
+    const editFriend = friend => {
+        console.log('Time to edit friend');
+        setFriendToEdit(friend);
+    }
+
+    const finishEdit = friend => {
+        console.log(friend);
+        setLoading(true);
+        axiosWithAuth().put(`/friends/${friend.id}`, friend)
+            .then(res=> {
+                console.log(res);
+                setFriends(res.data);
+                setLoading(false);
+                setFriendToEdit({});
+            })
+            .catch(err => {
+                console.log(err);
+                setLoading(false);
+                setFriendToEdit({});
+            })
+    }
+
     return (
         <div>
             <h2>Friends</h2>
-            <AddFriendForm addFriend={addFriend}/>
+            <AddFriendForm addFriend={addFriend} friendToEdit={friendToEdit} finishEdit={finishEdit}/>
             {loading && <p>Loading...</p>}
             {friends && friends.map(friend => {
-                return (<Friend key={friend.id} friend={friend} deleteFriend={deleteFriend}/>)})}
+                return (<Friend key={friend.id} friend={friend} deleteFriend={deleteFriend} editFriend={editFriend}/>)})}
         </div>
     );
 };
