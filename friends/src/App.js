@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
@@ -10,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>FRIENDS</h1>
         <nav>
           <Link to='/login'>Log In</Link>
           <Link to='/friends'>Friends</Link>

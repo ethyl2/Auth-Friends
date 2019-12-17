@@ -21,7 +21,7 @@ const AddFriendForm = props => {
                 <input type='text' name='name' value={friend.name} onChange={handleChange} />
                 
                 <label htmlFor='age'>Age: </label>
-                <input type='text' name='age' value={friend.age} onChange={handleChange} />
+                <input type='number' name='age' value={friend.age} onChange={handleChange} />
                 
                 <label htmlFor='email'>Email: </label>
                 <input type='email' name='email' value={friend.email} onChange={handleChange} />

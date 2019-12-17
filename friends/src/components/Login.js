@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
+import friends from '../images/friends.jpg';
+
 const Login = ( props ) => {
     const [credentials, setCredentials] = useState({username: '', password: ''});
     const [loggingIn, setLoggingIn] = useState(false);
@@ -43,6 +45,11 @@ const Login = ( props ) => {
                 />
                 <button type='submit'>Log In</button>
             </form>
+
+            <div className='imgContainer'>
+                <img src={friends} alt='group of friends' />
+            </div>
+            
         </div>
     );
 }

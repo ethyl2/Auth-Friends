@@ -24,24 +24,25 @@ const Friend = ({ friend, deleteFriend, editFriend }) => {
     }
 
     return (
-        <div>
+        <div className='friendBox'>
             <h3>{friend.name}</h3>
             <p>{friend.age} Years Old</p>
             <p>{friend.email}</p>
-            <button onClick={handleDeleteClick}>X</button>
-            <button onClick={handleEditClick}>Edit</button>
+            <button className='delete' onClick={handleDeleteClick}><span role="img" aria-label="skull">🕱</span></button>
+            <button className='edit' onClick={handleEditClick}><span role="img" aria-label="skull">✏️</span></button>
 
             {isEditing && <form onSubmit={handleSubmit}>
                 <label htmlFor='name'>Name: </label>
                 <input type='text' name='name' value={friendToEdit.name} onChange={handleChange} />
                 
                 <label htmlFor='age'>Age: </label>
-                <input type='text' name='age' value={friendToEdit.age} onChange={handleChange} />
+                <input type='number' name='age' value={friendToEdit.age} onChange={handleChange} />
                 
                 <label htmlFor='email'>Email: </label>
                 <input type='email' name='email' value={friendToEdit.email} onChange={handleChange} />
-                <button type='submit'>Submit</button>
+                <button type='submit'>Edit Friend</button>
             </form>}
+
         </div>  
     )
 }

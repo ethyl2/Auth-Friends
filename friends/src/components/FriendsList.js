@@ -62,11 +62,13 @@ const FriendsList = props => {
 
     return (
         <div>
-            <h2>Friends</h2>
             <AddFriendForm addFriend={addFriend}/>
-            {loading && <p>Loading...</p>}
-            {friends && friends.map(friend => {
-                return (<Friend key={friend.id} friend={friend} deleteFriend={deleteFriend} editFriend={editFriend}/>)})}
+            <h2>Friends</h2>
+            <div className='friendsBox'>
+                {loading && <p>Loading...</p>}
+                {friends && friends.map(friend => {
+                    return (<Friend key={friend.id} friend={friend} deleteFriend={deleteFriend} editFriend={editFriend}/>)})}
+            </div>
         </div>
     );
 };
