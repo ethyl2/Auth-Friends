@@ -6,6 +6,7 @@ const AddFriendForm = props => {
     const handleSubmit = e => {
         e.preventDefault();
         props.addFriend(friend);
+        setFriend({name: '', age: '', email: ''});
     }
 
     const handleChange = e => {
