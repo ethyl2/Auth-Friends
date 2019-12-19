@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color:black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.imgContainer {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.imgContainer img {
+  max-width: 100%;
+}
+
+form {
+  background: #221E56;
+  width: 33%;
+  color: white;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+input {
+  width: 80%;
+  height: 1.2rem;
+  border: none;
+}
+
+button {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  margin: 0.5rem;
+  background: #D4A60B;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #5C8AC3;
+  transform: scale(1.1);
+  color: white;
+}
+
+.friendsBox {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0.25rem auto;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.friendBox {
+  width: 45%;
+  background: #D0D8DA;
+  margin: 0.5rem;
+  padding: 0.25rem;
+}
+
+@media (max-width: 500px) {
+  .friendBox {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+}
+
+.friendBox form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.delete {
+  background: #D7010D;
+  color: white;
+}
+
+.edit {
+  background: #536138;
+  color: white;
+}

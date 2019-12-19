@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Rock+Salt&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, button, label {
+  font-family: 'Rock Salt', cursive;
+}
+
+h1 {
+  letter-spacing: 2rem;
+}
+
+h2, h3 {
+  letter-spacing: 0.25rem;
+}
+
+a {
+  text-decoration: none;
+  margin: 0 1rem 0 1rem;
+  color: #D4A60B;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a:hover {
+  font-style: italic;
+  color: white;
+}
+
+span {
+  font-size: 3rem;
+  line-height: 3rem;
+}
